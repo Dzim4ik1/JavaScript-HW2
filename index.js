@@ -54,17 +54,21 @@ for (let index = 0; index < movies.length; index++) {
 
 
 function getMoviesByYear(movies, year) {
-	const getMoviesByYears = movies.filter(element => element.year === year   );
+  let yearToNumber = Number(year)
+  console.log(yearToNumber)
+	const getMoviesByYears = movies.filter(element => element.year === yearToNumber   );
 	console.log(getMoviesByYears)
 
 }
 
-getMoviesByYear(movies, 2019)
+getMoviesByYear(movies, 2001)
 
 
 function getMoviesByName(movies, name) {
-	const getMoviesByNames = movies.filter(element => element.title.includes(name) )
+ let nameToLowerCase =  name.toLowerCase()
+  console.log(nameToLowerCase)
+	const getMoviesByNames = movies.filter(element => element.title.includes(nameToLowerCase) )
 	console.log(getMoviesByNames)
 }
 
-getMoviesByName(movies, "While")
+getMoviesByName(movies, "IN")
