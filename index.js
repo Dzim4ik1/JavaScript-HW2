@@ -67,8 +67,8 @@ getMoviesByYear(movies, 2001)
 function getMoviesByName(movies, name) {
  let nameToLowerCase =  name.toLowerCase()
   console.log(nameToLowerCase)
-	const getMoviesByNames = movies.filter(element => element.title.includes(nameToLowerCase) )
+	const getMoviesByNames = movies.filter(element => element.title.toLowerCase().includes(nameToLowerCase) )
 	console.log(getMoviesByNames)
 }
 
-getMoviesByName(movies, "IN")
+getMoviesByName(movies, "while")
