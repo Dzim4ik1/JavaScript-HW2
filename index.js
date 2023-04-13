@@ -41,14 +41,18 @@ const movies = [
       "Goreng wakes in a concrete cell marked with the number 48. His cellmate, Trimagasi, explains that they are in (The Pit), a tower-style facility in which food is delivered via a platform that travels from the top-down, halting for a fixed period on each floor. People on lower levels can eat only what those above leave and are subjected to fatal temperatures if they keep the food. Prisoners are randomly reassigned to a new level each month. Trimagasi reveals that when assigned to level 132, he and his former cellmate cannibalized a resident who had fallen down the shaft. One day, a bloodied woman named Miharu rides down on the platform, whom Trimagasi explains descends the pit every month searching for her child.",
     details: {
       genre: "psychological thriller",
-      reviews: [{ username: "alfa12", content: "I love Apples ", score: 8 }],
+      reviews: [{ username: "alfa12", content: "I love Apples ", score: 8 },
+    { username: "alfa12", content: "I love Apples ", score: 10 },
+  { username: "alfa12", content: "I love Apples ", score: 3 }],
     },
   }
 ];
 
 for (let index = 0; index < movies.length; index++) {
   const element = movies[index];
-  console.log(`The ${element.year} film ${element.title}, which tells the story of “${element.description}”This movie starred ${element.actors} and etc. It was rated by 23 users, with a total rating of ${element.details.reviews[0].score}. Register to watch this ${element.details.genre}.`);
+  const score = 0;
+  const totalScore = element.details.reviews.reduce((a,b) => a+b.score, score)/ element.details.reviews.length
+  console.log(`The ${element.year} film ${element.title}, which tells the story of “${element.description}”This movie starred ${element.actors} and etc. It was rated by ${element.details.reviews.length} ${element.details.reviews.length <= 1 ? 'user': 'users'}, with a total rating of ${totalScore}. Register to watch this ${element.details.genre}.`);
 }
 
 
